@@ -1,0 +1,16 @@
+{%  extends "OrgaController/base.html" %}
+{% block menu %}
+{% endblock %}
+{% block body %}
+<ul>
+    {% for orga in all %}
+    <li><a href="{{path('orga.getOne',[orga.id])}}">{{orga.name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block header %}
+<a href="{{ path('orga.index') }}" data-target="body"  class="ui basic inverted button">
+    <i class="factory icon"></i>Organisations
+</a>
+{% endblock %}
